@@ -1,0 +1,164 @@
+hush
+
+d5 $ fast 4 $ every 2 (hurry 0.25) $ every 4 (hurry 2) $ s "[kick ho]"
+  # legato 1
+  # amp 0.1
+  # delay 0.25
+  # delaytime 0.25
+
+
+d2 $ jux rev $ n "0 1 2 1" # s "pluck"
+  # delay 1
+  -- # delaytime 0.125 -- vary this value
+
+d4 $ fast 2 $ n "[~ 5] [~ 5]" # s "feel"
+  # amp 0.2
+  # legato 1
+  # 0.5
+
+d6 $ fast 2 $ n "[4 ~] [0 ~]" # s "feel"
+  # amp 0.3
+  # legato 1
+
+d6 $ fast 2 $ n "[4 ~] [0*2 ~]" # s "feel"
+  # amp 0.2
+  # legato 1
+
+d5 silence
+
+d1 $ slow 2 $ (hurry 2) $ slow 2 $ s "pluck" <| n (run 16)
+  # room 5
+  # amp 0.1
+
+d5 silence
+
+d3 $ n "0*4" # s "gabba"
+  # amp 0.15
+
+d3 $ n "0*4" # s "gabba"
+  # amp 0.1
+  # delay 0.5
+  # delaytime 0-0.5
+
+d3 $ n "0*4" # s "gabba"
+  # amp 0.1
+  # delay 0.5
+  # delaytime 0-0.5
+  # 1.5
+
+d8 silence
+
+d8 $ n "~ 1 2 ~ 4" # s "numbers"
+  # cut 1
+  # amp "0.8*3 1.7"
+
+-- d8 $ n "~ 1 2 ~ [2 2 4]" # s "numbers" -- optional
+--   # cut 1
+--   # amp "0.8*3 1.2"
+
+d8 $ "1 2 3 4" # s "numbers"
+
+d8 silence
+
+d8 $ n "~ 1 2 ~ 4" # s "numbers"
+  # cut 1
+  # amp "0.4*3 0.8"
+  # delay 1
+  # delaytime 5
+
+
+-- break down
+hush
+-- rebuild
+
+d8 $ "1 2 3 4" # s "numbers"
+
+d2 $ jux rev $ n "0 1 2 1" # s "pluck"
+  # delay 1
+  # delaytime 1
+
+d7 $ every 1 (hurry 2) $ slow 2 $ every 3 (rev) $ hurry 2 $ s "pluck" <| n (run 8)
+    # room 2
+    # amp 0.1
+    # 0.5
+
+d5 $ n "0*4" # s "ho:5"
+  # legato 1
+  # amp 0.05
+  # 0.3
+
+d5 silence
+
+d6 $ every 2 (rev) $ jux rev $ fast 2 $ n "[4 ~] [0*2 ~]" # s "feel"
+  # amp 0.2
+  # legato 1
+
+d6 silence
+
+d4 $ fast 2 $ n "[~ 5*2] [~ 5]" # s "feel"
+  # amp 0.2
+  # legato 1
+
+d6 $ fast 2 $ n "2*8" # s "feel" -- vary start by 0, 2 3
+  # amp 0.2
+  # legato 1
+
+d6 silence
+
+d8 $ fast 1 $ n "1 2 ~ 8" # s "numbers"
+  # cut 1
+  # amp 0.4
+  # delay 1
+  # delaytime 1-3
+
+d8 $ hurry 2 $ n "~ 1 2 ~ [0 0 0 0]" # s "numbers"
+  # cut 1
+  # legato 1
+  # amp 1.2
+  # 0.5
+
+-- outro
+hush
+
+d7 $ fast 2 $ hurry 0.5 $ rev $ n "~*9 [9 10 11 12 13 14 15 16]" # s "fsg"
+    # speed 0.5
+    # delay 0.4 # delaytime (1/3) # delayfb 0.6
+    # room 1.5
+    # legato 1
+    # amp 0.2
+
+hush
+
+-- random alternatives
+d10 $ every 3 (hurry 2) $ slow 2 $ every 3 (rev) $ hurry 2 $ s "pluck" <| n (run 8)
+  # room 2
+  # amp 0.2
+  # 0.3
+
+d11 $ every 3 (hurry 2) $ slow 2 $ every 3 (rev) $ hurry 2 $ s "pluck" <| n (run 8)
+  # room 2
+  # amp 0.2
+
+d7 $ n "[4] [0 3 3]" # s "hit"
+  # legato 1
+  # 0.3
+  # amp 0.2
+
+d12 $ rev $ jux rev $ every 3 (hurry 2) $ slow 2 $ every 3 (rev) $ hurry 2 $ s "pluck" <| n (run 16)
+  # room 2
+  # amp 0.2
+
+d8 $ hurry 2 $ n "~ 1 2 ~ [0 0 0 0]" # s "numbers"
+  # cut 1
+  # legato 1
+  # amp 1.2
+  # 0.5
+
+d8 $ n "~ 1 2 ~ 0" # s "numbers"
+  # cut 1
+  # amp 1.2
+
+d8 $ every 1 (hurry 2) $ slow 2 $ every 3 (rev) $ hurry 2 $ s "pluck" <| n (run 8)
+    # room 2
+    # amp 0.2
+    # 0.5
