@@ -1,0 +1,45 @@
+d1 $ "[ab:4 ab:4]"
+
+d2 $ "ab:12*4"
+
+d3 $ "~ ~ 808sd:8 ~"
+
+d3 silence
+
+d4 $ "~ ab:4 ~ ab:4 ~ [ab:5*16] ~ <~ [ab:5*16]>"
+
+d11 $ every 2 (# coarse 30) $ sound "~ ab:4 ~ ab:4 ~ [ab:4*2] ~ ~"
+
+d9 $ every 4 (hurry 2) $ s "arpy" <| up "c d e f g ~ b ~"
+  # amp 0.3
+  # squiz 4
+  # coarse 20
+
+d5 $ s "amencutup <~ [amencutup:2 [~ ~ ~ amencutup]]>" # amp 0.3
+
+d6 $ s "baa" # squiz 5 # amp 0.1
+
+d9 silence
+
+d7 $ slow 4 $ "em2*8"
+  # n "0 1 0 3 0 5 0 7 0"
+  # amp 0.1
+  # delay 0.5
+  # delayfeedback 0.5
+  # delaytime 0.4
+
+d8 $ s "alphabet" # n "<0 4>"
+
+d8 silence
+
+d10 $ s "alphabet" # n "<0 4>"
+  # vowel "<a o e u i>"
+  # coarse "<10>"
+  # squiz "40"
+  # amp 0.3 -- slowly increase amplitude
+
+d12 $ hurry 4 $ s "superpiano" >| note (cat [struct "t(2,80)" $ choose [7,0, 1, 2, 3, 4, 6, 8], "a e b c"])
+    # amp 0.1
+    # squiz 5
+
+d12 silence
