@@ -1,0 +1,103 @@
+d2 $ fast 16 $ randslice 16 $ sound "break:2"
+  # room 1.3 # sz 0.5
+  # legato 1
+  # amp 0.5
+
+d2 $ s "kurt:4"
+  # legato 4
+  # amp 3
+-- alternate between strange drums and kurt until done
+
+
+d1 $ s "kurt:4"
+  # legato 4
+  # amp 3
+
+d2 $ arp "up" $ s "bd [ho <~ bd>] snare <ho [hc:2!4]>"
+  # legato 1
+  # room 0.7 # sz 0.8
+  # speed "<2 3 2 4.5>"
+
+d3 $ note "e!4 f!4" # s "bsguitar:6"
+  # legato 1
+  # room 0.7 # sz 0.8
+  # amp 0.15
+  # pan (saw  + 1)
+
+once $ s "auto:3"
+
+d1 $ qtrigger 0.5 $ arp "up" $ n "e'maj f'maj" # s "pluck"
+      # speed "<2 3 2 4.5>"
+      # amp 1.2
+      # room 0.7 # sz 0.8
+      # pan sine
+
+once $ s "auto:3"
+
+d4 $ every 2 (# amp 0.42) $ arp "down" $ note "e'maj f'maj" # s "jungbass:5"
+  # speed "<2 3 2 4.5>"
+  # delay 0.6
+  # delaytime 0.125
+  # delayfb 0.6
+  # amp 0
+
+once $ s "auto:3"
+
+d1 $ slow 2 $ off "q" ((|- n 24) . (# squiz 1.3)) $ arp "up" $ n "e'maj f'maj" # s "pluck"
+  # speed "<2 3 2 4.5>"
+  # amp 1
+  # room 0.7 # sz 0.8
+
+once $ s "auto:3"
+
+d2 $ every 1 ((jux rev) . (slow 1)) $ arp "up" $ s "bd [ho <~ bd>] snare <ho [hc:2!4]>"
+  # legato 1
+  # room 0.9 # sz 0.7
+  # speed 0.75
+  # speed "<2 3 2 4.5>"
+
+-- break down
+do solo 2
+
+d1 silence
+
+
+d1 $ jux rev $ off "q" ((|+ n 7) . (# squiz 1.3)) $ arp "up" $ arp "pinkyup" $ n "e'maj f'maj" # s "pluck"
+    # speed "<2 3 2 4.5>"
+    # amp 1.2
+    # room 0.7 # sz 0.8
+
+-- rebuild
+do unsolo 2
+
+d6 $ note "e [f e'maj2]" <| s "kick [~ ~ kick!2]"
+  # amp 1.3
+  # speed 0.75
+  # room 0.7 # sz 0.8
+  # amp 0.8
+
+d2 $ fast 2 $ every 4 ((jux rev) . (slow 2)) $ arp "up" $ s "bd [ho <~ bd>] snare <ho [hc:2!4]>"
+  # legato 1
+  # room 0.9 # sz 0.7
+  # speed 0.75
+  -- # speed "<0.75 3 2 4.5>"
+
+-- outro
+do solo 1
+
+do unsolo 1
+
+
+
+
+
+-- random thoughts
+d1 $ jux rev $ off "q" ((|+ n 7) . (# squiz 1.3)) $ arp "up" $ arp "<pinkyup thumbdown>" $ n "e'maj f'maj" # s "pluck"
+    # speed "<2 3 2 4.5>"
+    # amp 1.2
+    # room 0.7 # sz 0.3
+
+d1 $ jux rev $ off "q" ((|+ n 7) . (# squiz 1.3)) $ arp "up" $ arp "thumbdown" $ n "e'maj f'maj" # s "pluck"
+    # speed "<2 3 2 4.5>"
+    # amp 1.2
+    # room 0.7 # sz 0.8
